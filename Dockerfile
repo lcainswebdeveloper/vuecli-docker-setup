@@ -1,6 +1,5 @@
 # base image
 FROM node:8
-USER node
 
 # set working directory
 WORKDIR /home/node
@@ -13,5 +12,6 @@ ENV PATH /app/node_modules/.bin:$PATH
 RUN npm install
 RUN npm install @vue/cli@3.7.0 -g
 
+USER node
 # start app
 CMD ["npm", "run", "serve"]
